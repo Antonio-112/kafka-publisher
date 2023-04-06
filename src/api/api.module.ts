@@ -1,4 +1,5 @@
 import { Module, Provider } from '@nestjs/common';
+import { KafkaModule } from 'src/infra/kafka/kafka-module';
 import { ApiController } from './api.controller';
 import { ApiService } from './api.service';
 
@@ -10,7 +11,8 @@ const provider: Provider[] = [
 ];
 
 @Module({
+  imports: [KafkaModule, KafkaModule],
   controllers: [ApiController],
-  providers: provider,
+  providers: [...provider],
 })
 export class ApiModule {}

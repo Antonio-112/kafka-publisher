@@ -18,9 +18,11 @@ const provider: Provider[] = [
           client: {
             clientId: process.env.KAFKA_CLIENT_ID,
             brokers: [
-              String(process.env.CLIENTE_SERVICE_KAFKA_HOST) +
+              /*               String(process.env.CLIENTE_SERVICE_KAFKA_HOST) +
                 ':' +
-                String(process.env.CLIENTE_SERVICE_KAFKA_PORT),
+                String(process.env.CLIENTE_SERVICE_KAFKA_PORT), */
+              // local docker broker
+              'localhost:29092',
             ],
           },
           // Other configuration options for authentication, etc.
@@ -37,6 +39,7 @@ const provider: Provider[] = [
       },
     ]),
   ],
+  exports: provider,
   providers: provider,
 })
 export class KafkaModule {}
