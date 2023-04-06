@@ -21,6 +21,8 @@ const provider: Provider[] = [
               String(process.env.CLIENTE_SERVICE_KAFKA_HOST) +
                 ':' +
                 String(process.env.CLIENTE_SERVICE_KAFKA_PORT),
+              // local docker broker
+              'localhost:29092',
             ],
           },
           // Other configuration options for authentication, etc.
