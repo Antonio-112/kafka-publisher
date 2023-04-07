@@ -1,73 +1,39 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+ 
+<h1 align="center" >Repositorio de la API de Kafka con NestJS</h1>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<p>Este repositorio contiene una API hecha con el framework de NestJS que publica datos a un tópico de Kafka. También incluye un archivo <code>docker-compose.yml</code> para iniciar un Kafka dockerizado. La API todavía está en progreso, pero es funcional.</p>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+<h2>Configuración</h2>
+<p>Antes de comenzar, asegúrese de tener <strong>Node.js</strong> y <strong>Docker</strong> instalados en su sistema.</p>
+<p>Para configurar el repositorio, clone el repositorio en su máquina local y ejecute el siguiente comando en la terminal para instalar las dependencias necesarias:</p>
+<pre><code>npm install</code></pre>
+<p>Además, es necesario poblar las variables de entorno del archivo de ejemplo <code>.env.example</code> antes de continuar.</p>
+<h2>Iniciar el Kafka dockerizado</h2>
 
-## Description
+<p>Para iniciar el Kafka dockerizado, ejecute el siguiente comando en la terminal:</p>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<pre><code>npm run docker:start</code></pre>
 
-## Installation
+<p>Esto iniciará un contenedor de Docker con un servidor de Kafka en su máquina local.</p>
 
-```bash
-$ npm install
-```
+<h2>Iniciar la API con Node.js</h2>
 
-## Running the app
+<p>Para iniciar la API con Node.js, ejecute el siguiente comando en la terminal:</p>
 
-```bash
-# development
-$ npm run start
+<pre><code>npm run start</code></pre>
 
-# watch mode
-$ npm run start:dev
+<p>Esto iniciará la API en su máquina local. Si esto es exitoso</p>
 
-# production mode
-$ npm run start:prod
-```
+<p>La API ahora está en ejecución y puede enviar datos al tópico de Kafka utilizando la ruta <code>POST /producer</code>.</p>
 
-## Test
+<h2>Detener el Kafka dockerizado</h2>
 
-```bash
-# unit tests
-$ npm run test
+<p>Para detener el Kafka dockerizado, ejecute el siguiente comando en la terminal:</p>
 
-# e2e tests
-$ npm run test:e2e
+<pre><code>npm run docker:stop</code></pre>
 
-# test coverage
-$ npm run test:cov
-```
+<p>Esto detendrá y eliminará los contenedores de Docker que se iniciaron anteriormente.</p>
 
-## Support
+<h2>Contribución</h2>
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+<p>Si desea contribuir a este repositorio, asegúrese de seguir las pautas de contribución descritas en el archivo <code>CONTRIBUTING.md</code>. Si tiene alguna pregunta o
