@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "b9b0f480-a259-4b22-ad38-56e50138d430",
+		"name": "Kafka Publisher API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Publish Message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topic\": \"kafka-test-topic\",\n    \"message\": \"Hello, Kafka!\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/publish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"publish"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
