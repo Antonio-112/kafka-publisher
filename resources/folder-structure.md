@@ -16,6 +16,10 @@ my-nestjs-project/
 │ │ │ ├── kafka.repository.ts
 │ │ │ └── kafka.model.ts
 │ │ │
+│ │ ├── middlewares/
+│ │ │ └── logger.middleware.ts
+│ │ │
+│ │ │
 │ ├── app.module.ts
 │ └── main.ts
 │
