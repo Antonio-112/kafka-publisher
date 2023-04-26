@@ -1,5 +1,5 @@
 import { Body, Controller, Inject, Logger, Post } from '@nestjs/common';
-import { ApiService } from './api.service';
+import { ApiService } from '../services/api.service';
 
 @Controller('api')
 export class ApiController {

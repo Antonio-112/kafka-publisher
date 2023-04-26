@@ -1,6 +1,6 @@
 import { Inject, Logger, OnModuleInit } from '@nestjs/common';
 import { ClientKafka } from '@nestjs/microservices';
-import { KafkaData } from './model/kafka.model';
+import { KafkaData } from './kafka.model';
 
 export class KafkaRepository implements OnModuleInit {
   private readonly _logger = new Logger(KafkaRepository.name);
