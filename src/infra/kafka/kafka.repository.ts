@@ -14,6 +14,7 @@ export class KafkaRepository implements OnModuleInit {
       this._logger.log('Connected to Kafka broker');
     } catch (err) {
       this._logger.error(`Failed to connect to Kafka broker: ${err}`);
+      // Considerar agregar un mecanismo de reintento al conectar al broker de Kafka
     }
   }
   async send(data: KafkaData): Promise<void> {
@@ -25,6 +26,7 @@ export class KafkaRepository implements OnModuleInit {
         this._logger.debug(
           `Response from Kafka broker: ${JSON.stringify(response)}`,
         );
+        // Considerar manejar las respuestas en función de su contenido, por ejemplo, errores en la respuesta
       },
       error: (error) => {
         this._logger.error(`Error sending message to Kafka broker: ${error}`);
