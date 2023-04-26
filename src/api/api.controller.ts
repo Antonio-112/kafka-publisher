@@ -10,7 +10,9 @@ export class ApiController {
   async publish(
     @Body() data: { topic: string; message: string },
   ): Promise<string> {
-    // Considerar agregar validación al cuerpo de la solicitud antes de enviarla al método sendToKafka
+    this.logger.debug('');
+    // Considerar agregar una capa de transformación de datos si es necesario antes de enviar los datos al servicio
+    // Considerar manejar errores específicos y devolver códigos de estado HTTP apropiados
     return this.apiService.sendToKafka(data);
   }
 }
