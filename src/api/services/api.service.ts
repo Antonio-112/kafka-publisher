@@ -1,6 +1,6 @@
 import { Inject, Injectable, Logger } from '@nestjs/common';
-import { KafkaData } from 'src/infra/kafka/model/kafka.model';
-import { KafkaRepository } from '../infra/kafka/kafka.repository';
+import { KafkaData } from 'src/infra/kafka/kafka.model';
+import { KafkaRepository } from '../../infra/kafka/kafka.repository';
 
 @Injectable()
 export class ApiService {
