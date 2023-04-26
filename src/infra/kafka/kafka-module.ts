@@ -8,6 +8,7 @@ const provider: Provider[] = [
     useClass: KafkaRepository,
   },
 ];
+
 @Module({
   imports: [
     ClientsModule.register([
@@ -18,23 +19,27 @@ const provider: Provider[] = [
           client: {
             clientId: process.env.KAFKA_CLIENT_ID,
             brokers: [
-              /*               String(process.env.CLIENTE_SERVICE_KAFKA_HOST) +
-                ':' +
-                String(process.env.CLIENTE_SERVICE_KAFKA_PORT), */
-              // local docker broker
-              'localhost:29092',
+              // Configurar brokers desde variables de entorno o usar el valor predeterminado 'localhost:29092'
+              process.env.CLIENTE_SERVICE_KAFKA_HOST
+                ? `${String(process.env.CLIENTE_SERVICE_KAFKA_HOST)}:${String(
+                    process.env.CLIENTE_SERVICE_KAFKA_PORT,
+                  )}`
+                : 'localhost:29092',
             ],
           },
-          // Other configuration options for authentication, etc.
-          /*   ssl: {
-                rejectUnauthorized: false,
-                cert: String(process.env.CERT_PEM_ROUTE)
-              },
-              sasl: {
-                mechanism: 'scram-sha-512',
-                username: String(process.env.SASL_USERNAME),
-                password: String(process.env.SASL_PASSWORD)
-              } */
+          // Otras opciones de configuración para autenticación, etc.
+          // Habilitar estas opciones si es necesario, asegurándose de que las variables de entorno correspondientes estén configuradas
+          /* 
+          ssl: {
+            rejectUnauthorized: false,
+            cert: String(process.env.CERT_PEM_ROUTE)
+          },
+          sasl: {
+            mechanism: 'scram-sha-512',
+            username: String(process.env.SASL_USERNAME),
+            password: String(process.env.SASL_PASSWORD)
+          } 
+          */
         },
       },
     ]),
